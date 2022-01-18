@@ -1,64 +1,61 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- Chamando o layout --}}
+@extends('layouts.main')
 
-        <title>Laravel</title>
+{{-- Título da Página --}}
+@section('title', 'HDC Events')
 
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
-        <h1>Título</h1>
+{{-- Abrindo conteúdo --}}
+@section('content')
 
-        <img src="/img/banner.png" alt="Banner">
+<h1>Título</h1>
 
-        <!-- Condição com Blase -->
-        {{-- Condição com Blase --}}
-        @if( 10 > 5 )
-            <p>A condição é true.</p>
-        @endif
+<img src="/img/banner.png" alt="Banner">
 
-        <hr/>
+<!-- Condição com Blase -->
+{{-- Condição com Blase --}}
+@if( 10 > 5 )
+    <p>A condição é true.</p>
+@endif
 
-        <p>{{ $nome }}</p>
+<hr/>
 
-        <hr>
+<p>{{ $nome }}</p>
 
-        @if( $nome == 'Pedro' )
-            <p> O nome é igual a Pedro. </p>
-        @elseif( $nome == 'Gabriel')
-            <p> O nome é Gabriel e ele tem {{ $idade }} anos e trabalha como {{ $profissao }}. </p>
-        @else
-            <p> O nome não é Pedro. </p>
-        @endif
+<hr>
 
-        <hr>
+@if( $nome == 'Pedro' )
+    <p> O nome é igual a Pedro. </p>
+@elseif( $nome == 'Gabriel')
+    <p> O nome é Gabriel e ele tem {{ $idade }} anos e trabalha como {{ $profissao }}. </p>
+@else
+    <p> O nome não é Pedro. </p>
+@endif
 
-        @for( $i = 0; $i < count($array); $i++)
-            <p> {{ $array[$i] }} - {{$i}} </p>
+<hr>
 
-            @if( $i == 2 )
-                <p> i é 2 </p>
-            @endif
-        @endfor
+@for( $i = 0; $i < count($array); $i++)
+    <p> {{ $array[$i] }} - {{$i}} </p>
 
-        <hr>
+    @if( $i == 2 )
+        <p> i é 2 </p>
+    @endif
+@endfor
 
-        @foreach( $nomes as $nome )
-            {{-- Váriavel especial do foreach para imprimir/utilizar o indice do array --}}
-            <p>{{ $loop->index }}</p>
-            <p>{{ $nome }}</p>
-        @endforeach
+<hr>
 
-        <hr>
+@foreach( $nomes as $nome )
+    {{-- Váriavel especial do foreach para imprimir/utilizar o indice do array --}}
+    <p>{{ $loop->index }}</p>
+    <p>{{ $nome }}</p>
+@endforeach
 
-        {{-- Inserindo Código PHP no Blade --}}
-        @php
-            $name = 'João';
-            echo $name;
-        @endphp
+<hr>
 
-        <script src="/js/script.js"></script>
-    </body>
-</html>
+{{-- Inserindo Código PHP no Blade --}}
+@php
+    $name = 'João';
+    echo $name;
+@endphp
+
+{{-- Fechado conteúdo --}}
+@endsection
