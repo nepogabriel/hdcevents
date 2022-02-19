@@ -2,14 +2,12 @@
 @extends('layouts.main')
 
 {{-- Título da Página --}}
-@section('title', 'Produto')
+@section('title', 'Produtos')
 
 {{-- Abrindo conteúdo --}}
 @section('content')
 
-    @if($id != null)
-        <p>Exibindo produto id: {{ $id }}</p>
-    @endif
+<h2>Página de Produtos</h2>
 
 {{-- Fehcnado conteúdo --}}
 @endsection
