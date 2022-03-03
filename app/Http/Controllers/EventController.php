@@ -4,25 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//Acessando o model
+use App\Models\Event;
+
 class EventController extends Controller
 {
     public function index() {
-        // Criando váriavel para retornar na view
-        $nome = 'Gabriel';
-        $idade = 22;
 
-        $array = [10, 20, 30, 40, 50];
+        // Pegando todos os registros da tabela events
+        $events = Event::all();
 
-        $nomes = ['Matheus', 'Maria', 'João', 'Saulo'];
-
-        return view('welcome',
-            [
-                'nome' => $nome,
-                'idade' => $idade,
-                'profissao' => 'Programador PHP',
-                'array' => $array,
-                'nomes' => $nomes
-            ]);
+        return view('welcome', ['events' => $events]);
     }
 
     public function create() {
