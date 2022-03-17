@@ -15,8 +15,46 @@
 </head>
 <body>
 
-    {{-- Será substituido pelos conteúdos das páginas. --}}
-    @yield('content')
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">HDC EVENTS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="events/create">Criar Eventos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if(session('msg'))
+                    <p class="msg"> {{ session('msg') }} </p>
+                @endif
+
+                {{-- Conteúdo das páginas. --}}
+                @yield('content')
+            </div>
+        </div>
+    </main>
 
     <footer>
         <p>HDC Events &copy; 2022.</p>
