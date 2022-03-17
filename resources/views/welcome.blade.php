@@ -14,8 +14,6 @@
     </form>
 </div>
 
-<a href="/events/create" class="btn btn-primary">Cadastrar Evento</a>
-
 <div id="events-container" class="com-md-12">
     <h2> Próximos Eventos </h2>
     <p class="subtitle">Veja os eventos dos próximos dias</p>
@@ -23,7 +21,7 @@
     <div id="cards-container" class="row">
         @foreach($events as $event)
             <div class="card col-md-3">
-                <img src="" alt="{{ $event->title }}" />
+                <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}" />
 
                 <div class="card-body">
                     <p class="card-date">10/09/2022</p>
