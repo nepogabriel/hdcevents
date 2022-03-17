@@ -14,6 +14,8 @@
     </form>
 </div>
 
+<a href="/events/create" class="btn btn-primary">Cadastrar Evento</a>
+
 <div id="events-container" class="com-md-12">
     <h2> Próximos Eventos </h2>
     <p class="subtitle">Veja os eventos dos próximos dias</p>
