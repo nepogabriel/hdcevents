@@ -25,6 +25,11 @@
         </div>
 
         <div class="form-group">
+            <label for="date">Data do evento:</label>
+            <input type="date" class="form-control" id="date" name="date"/>
+        </div>
+
+        <div class="form-group">
             <label for="city">Cicade:</label>
             <input type="text" class="form-control" id="city" name="city" placeholder="Local do evento"/>
         </div>
@@ -43,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <label for="description">Adicione itens de infraestrutura:</label>
+            <label>Adicione itens de infraestrutura:</label>
 
             <div class="form-group">
                 <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
